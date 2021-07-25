@@ -1,0 +1,30 @@
+```{r}
+install.packages("titanic")
+```
+
+
+```{r}
+
+library(ggplot2)
+library(titanic)
+data("titanic_train", package = "titanic")
+titanic <- titanic_train
+titanic
+```
+
+```{r}
+ggplot(data = titanic, aes(x = Fare)) + 
+  geom_histogram(bins = 15)
+```
+```{r}
+library(ggplot2)
+theme_set(theme_classic())
+
+df <- ggplot(mpg, aes(manufacturer))
+df + geom_bar(aes(fill=class), width = 0.5) + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  labs(title="Categorical Variable", 
+       subtitle="Vehicle Classes") 
+
+```
+
